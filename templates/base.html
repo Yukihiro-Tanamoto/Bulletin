@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <title>{% block page_title %}{% endblock %}</title>
+
+</head>
+<body>
+<nav>
+    <p class="site-name">エンジニアを目指す会</p>
+    <ul>
+        <li><a href="{% url 'posts:index' %}">Top</a></li>
+        <li><a href="{% url 'posts:write' %}">投稿</a></li>
+        <li><a href="{% url 'posts:Top' %}">このサイトについて</a></li>
+    </ul>
+</nav>
+<p>※エンジニア・・・web,se,ネットワーク,インフラ等</p>
+
+<div class="title">
+    <h1>{% block title %}{% endblock %}</h1>
+</div>
+
+<hr>
+
+<div class="content">
+    {% block content%}{% endblock %}
+</div>
+
+<hr>
+
+</body>
+</html>
